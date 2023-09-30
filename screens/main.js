@@ -91,7 +91,10 @@ export default function MainScreen(props) {
               <TouchableOpacity
                 onPress={() => {
                   // MainScreen 호출시 들어온 매개변수의 네비게이션에 이동할 위치 명시
-                  props.navigation.navigate("Product");
+                  // 데이터도 넣어서(프롭스로) 화면이동 가능
+                  props.navigation.navigate("Product", {
+                    id: product.id,
+                  });
                 }}
               >
                 <View style={styles.productCard} key={index}>
